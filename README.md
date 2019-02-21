@@ -1,29 +1,29 @@
 
 # zookeeper
-### zookeeper 是什么？
+3. zookeeper 是什么？
 
-zookeeper是一个分布式的，开放源码的分布式应用程序协调服务(再加一点)		
+   zookeeper是一个分布式的，开放源码的分布式应用程序协调服务(再加一点)		
 
-### zookeeper使用那些算法来保证可靠性和数据一致性?
+2. zookeeper使用那些算法来保证可靠性和数据一致性?
 
-Paxos，zab	
+   Paxos，zab	
 
 3. zookeeper提供的几个主要组成部分?
 
-- leader -- 所有的数据写入和同步都是leader在决定。
-- follower --	接受leader发送过来的数据，和leader维持心跳，转发客户端的写入请求。
-- observer -- 自己google，一般不使用。		
+   - leader -- 所有的数据写入和同步都是leader在决定。
+   - follower --	接受leader发送过来的数据，和leader维持心跳，转发客户端的写入请求。
+   - observer -- 自己google，一般不使用。		
 
 4. zookeeper直接提供分布式功能么?
 
-本身并不提供分布式的功能，他实际上是一个类似于文件系统管理的程序，但是由于他提供了一些保证，所以我们可以使用这些保证来完成分布式编程。也就是说zookeeper只是一个分布式编程的工具。
+   本身并不提供分布式的功能，他实际上是一个类似于文件系统管理的程序，但是由于他提供了一些保证，所以我们可以使用这些保证来完成分布式编程。也就是说zookeeper只是一个分布式编程的工具。
 
 5. zookeeper提供以下特性：
-- 顺序一致性：也就是说每一个客服端发送的修改动作都是按照客户端发送的顺序来执行的
-- 原子性：也就是说客户端发送的修改动作，要么成功，要么失败，他们是一个原子的动作
-- 同一视图：也就是说不管是哪个客户端，他们看到的zookeeper集群最终都是一个视图
-- 可靠性: 也就是说一个客户端写入成功，那么数据就会被存放到事务日志里面去，不会丢失数据
-- 及时性：在一个确定的时间段之内，保证客户端的更新会同步到所有集群里面去
+   - 顺序一致性：也就是说每一个客服端发送的修改动作都是按照客户端发送的顺序来执行的
+   - 原子性：也就是说客户端发送的修改动作，要么成功，要么失败，他们是一个原子的动作
+   - 同一视图：也就是说不管是哪个客户端，他们看到的zookeeper集群最终都是一个视图
+   - 可靠性: 也就是说一个客户端写入成功，那么数据就会被存放到事务日志里面去，不会丢失数据
+   - 及时性：在一个确定的时间段之内，保证客户端的更新会同步到所有集群里面去
 
 6. zookeeper可以不使用集群吗?
 
@@ -69,32 +69,32 @@ Curator框架本身就会监控对zookeeper的连接，每一个zookeeper的操�
 
 ### curator
   1. share
-	   - SharedCount
-	   - SharedValue
-	2. nodes
-	   - PersistentNode
-	   - GroupMember
-	3. lock
-	   - InterProcessMutex
-	   - InterProcessMultiLock
-	   - InterProcessReadWriteLock
-	   - InterProcessSemaphoreMutex
-	   - InterProcessSemaphoreV2
-	4. leader election
-	   - LeaderLatch
-	   - LeaderSelector
-	5. cache
-	   - NodeCache
-	   - PathChildrenCache
-	   - TreeCache
-	6. barrier
-	   - DistributedBarrier
-	   - DistributedDoubleBarrier
-	7. atomic
-	   - DistributedAtomicInteger
-	   - DistributedAtomicLong
-	   - DistributedAtomicNumber
-	8. service discovery
-	   - ServiceDiscovery
-	   - ServiceProvider
-	9. queue（不建议使用，如果要使用可以使用ActiveMQ/RabbitMQ这些消息中间件）
+     - SharedCount
+     - SharedValue
+  2. nodes
+     - PersistentNode
+     - GroupMember
+  3. lock
+     - InterProcessMutex
+     - InterProcessMultiLock
+     - InterProcessReadWriteLock
+     - InterProcessSemaphoreMutex
+     - InterProcessSemaphoreV2
+  4. leader election
+     - LeaderLatch
+     - LeaderSelector
+  5. cache
+     - NodeCache
+     - PathChildrenCache
+     - TreeCache
+  6. barrier
+     - DistributedBarrier
+     - DistributedDoubleBarrier
+  7. atomic
+     - DistributedAtomicInteger
+     - DistributedAtomicLong
+     - DistributedAtomicNumber
+  8. service discovery
+     - ServiceDiscovery
+     - ServiceProvider
+  9. queue（不建议使用，如果要使用可以使用ActiveMQ/RabbitMQ这些消息中间件）

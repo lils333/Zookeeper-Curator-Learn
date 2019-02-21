@@ -16,7 +16,6 @@ public abstract class Curator {
     //同一个node的所有操作都是有顺序的，不管是异步还是同步，都会按照顺序进行
     public static CuratorFramework create() {
         return CuratorFrameworkFactory.builder()
-//                .connectString("135.242.204.161:2181")
                 .connectString("127.0.0.1:2181")
                 .connectionTimeoutMs(5000)
                 .sessionTimeoutMs(15000)
